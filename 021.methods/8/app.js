@@ -19,7 +19,7 @@ for (let i = 0; i < n; i++) {
 // let res = 0;
 // arr.forEach(function (el) {
 //   if (!isNaN(el)) {
-//     res += 1;
+//     res++;
 //   }
 // });
 
