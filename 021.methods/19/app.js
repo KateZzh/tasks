@@ -13,7 +13,7 @@ for (let i = 0; i < n; i++) {
   }
 }
 
-for (i = 0; i < arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
   res += +arr[i];
   if (arr[i] == 0) {
     break;
