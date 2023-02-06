@@ -15,7 +15,6 @@ const num = prompt("введите число");
 
 let resultFull = [];
 let item = [];
-let item2 = [];
 
 for (let i = 0; i < arr.length; i++) {
   if (!isNaN(num) && num <= arr.length && num != 0 && num != "") {
@@ -30,4 +29,3 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log(resultFull);
-
