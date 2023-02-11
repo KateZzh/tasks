@@ -17,7 +17,7 @@ const str = "hschool";
 // const result = alternRegStr(str);
 // console.log(result);
 
-const alternRegStr = (str_) => {
+const doAlternRegStr = (str_) => {
   const arr = str_.split("");
   let res = "";
 
@@ -27,4 +27,4 @@ const alternRegStr = (str_) => {
   return res;
 };
 
-console.log(alternRegStr(str));
+console.log(doAlternRegStr(str));
