@@ -1,5 +1,5 @@
 // Напишите функцию, генерирующую пароль из 8 символов. (Math.random)
 
 (function () {
-  console.log(Math.floor(Math.random() * 10 ** 8));
+  console.log(String(Math.floor(Math.random() * 10 ** 7) + "s"));
 })();
