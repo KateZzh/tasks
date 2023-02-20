@@ -1,6 +1,6 @@
 // Вычислите сумму массива чисел статичного массива используя рекурсию
 
-const arr = [1, 2, 3, 4];
+const arr = [1, 2, 3, 4, 5];
 
 // function doSumArr(arr_) {
 //   if (arr_.length === 1) {
@@ -8,7 +8,6 @@ const arr = [1, 2, 3, 4];
 //   } else {
 //     return arr_[0] + doSumArr(arr_.slice(1));
 //   }
-//   return doSumArr(arr_.slice(1).push(sum));
 // }
 
 function doSumArr(arr_) {
