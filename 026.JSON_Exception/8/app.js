@@ -10,10 +10,7 @@ function findLetter(arr_) {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     const startIndex = alphabet.indexOf(arr_[0]);
-    const newArrFindLetter = alphabet.slice(
-      startIndex,
-      startIndex + arr_.length + 1
-    );
+    const newArrFindLetter = alphabet.slice(startIndex, startIndex + arr_.length + 1);
     let missingLetter = "";
 
     for (let i = 0; i < newArrFindLetter.length; i++) {
