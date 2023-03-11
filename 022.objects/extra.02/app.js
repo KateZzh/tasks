@@ -8,22 +8,38 @@
 // {"id": "test" "label": "Test", "category": "test", "priority": 1 },
 // Если совпадение есть – ошибка
 
-const obj = {
-  label: "Test1",
-  category: "test",
-  priority: 1,
-};
+let arrDataBase = [
+  { id: "javascript", label: "JavaScript", category: "programmingLanguages", priority: 1 },
+  { id: "typescript", label: "TypeScript", category: "programmingLanguages", priority: 1 },
+  { id: "sql", label: "SQL", category: "programmingLanguages", priority: 2 },
+  { id: "java", label: "Java", category: "programmingLanguages", priority: 3 },
+  { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
+  // { id: "test", label: "Test", category: "programmingLanguages", priority: 3 },
+];
 
-let dataBase = {
+const obj = {
   label: "Test",
   category: "test",
   priority: 1,
 };
 
-// if (obj.label === dataBase.label) {
-//     console.log('есть совпадение по label');
-// } else {
-//     Object.assign(dataBase, obj);
-// }
+function checkLabel(arrDataBase_, obj_) {
+  const bool = arrDataBase_.every((el) => el.label !== obj_.label);
+  return bool;
+}
 
-// console.log(dataBase);
+function addId(arrDataBase_, obj_) {
+  try {
+    if (!checkLabel(arrDataBase_, obj_)) throw new Error("совпадение есть");
+
+    const id = { id: obj_.label.toLowerCase() };
+    const newObj = { ...id, ...obj_ };
+    arrDataBase_.push(newObj);
+    return arrDataBase_;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+const res = addId(arrDataBase, obj);
+console.log(res);
