@@ -7,17 +7,32 @@
 
 const btn = document.querySelector("button");
 
-btn.addEventListener("click", function () {
-  const pillarCounts = document.querySelector("pillar-counts");
-  const pillarDistance = document.querySelector("pillar-distance");
-  const pillarWidth = document.querySelector("pillar-width");
-});
-
-function doWith(pillarCounts_, pillarDistance_, pillarWidth_) {
-  let result =
-    pillarCounts_ * pillarWidth_ + (pillarCounts_ - 1) * 100 * pillarDistance_;
-
-  return result;
+const isvalid = (inpCounts, inpDistance, inpWidth) => {
+  if (isNaN(inpCounts.value)) throw new Error('количество столбов: вы ввели не число');
+  if (isNaN(inpDistance.value)) throw new Error('расстояние между столбами: вы ввели не число');
+  if (isNaN(inpWidth.value)) throw new Error('ширина столба: вы ввели не число');
+  if (inpCounts.value <= 1) throw new Error('неверное количество столбов, введите число ≥ 2');
+  if (inpDistance.value < 10 || inpDistance.value > 30) throw new Error('неверное расстояние между столбами, введите число от 10 до 30');
+  if (inpWidth.value < 10 || inpWidth.value > 50) throw new Error('неверная ширина столба, введите число от 10 до 50');
 }
 
-console.log(doWith(10, 20, 15));
+btn.addEventListener("click", function () {
+  try{
+  const pillarCounts = document.querySelector(".pillar-counts");
+  const pillarDistance = document.querySelector(".pillar-distance");
+  const pillarWidth = document.querySelector(".pillar-width");
+  const div = document.querySelector("div");
+
+  isvalid(pillarCounts, pillarDistance, pillarWidth);
+
+  // let findDistance = (pillarCounts.value - 2) * pillarWidth.value + (pillarCounts.value - 1) * 100 * pillarDistance.value;
+div.innerHTML = findDistance;
+
+pillarCounts.value = '';
+pillarDistance.value = '';
+pillarWidth.value = '';
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
