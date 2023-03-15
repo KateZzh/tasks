@@ -1,4 +1,5 @@
-// Дополнить класс Validator. Добавить метод isDate для проверки на дату
+// Дополнить класс Validator. Добавить метод isPhone для проверки на номер
+// телефона.
 
 // class Validator {
 //   isEmail(str) {
@@ -30,6 +31,16 @@
 //       return er.message;
 //     }
 //   }
+
+//   isPhone(phone) {
+//     try {
+//       if (!/^(\+375|80|375)(44|29|33|25)[0-9]{7,7}$/gm.test(phone))
+//         throw new Error(false);
+//       return true;
+//     } catch (er) {
+//       return er.message;
+//     }
+//   }
 // }
 
 // const validator = new Validator();
@@ -37,15 +48,19 @@
 // const boolEmail = validator.isEmail("ekaterin.pro2@gmail.com");
 // const boolURL = validator.isURL("https://www.google.com/");
 // const boolDate = validator.isDate("15.03.2023");
+// const boolPhone = validator.isPhone("+375291234567");
 
 // console.log(boolEmail);
 // console.log(boolURL);
 // console.log(boolDate);
+// console.log(boolPhone);
+
 
 class Validator {
   str;
   url;
   date;
+  phone;
 
   isEmail() {
     try {
@@ -69,7 +84,18 @@ class Validator {
 
   isDate() {
     try {
-      if (!/^([0-2][0-9]|3[0-1])\.(0[1-9]|1[0-2])\.(19[0-9]|20[0-9]{2})$/gm.test(this.date))
+      if (
+        !/^([0-2][0-9]|3[0-1])\.(0[1-9]|1[0-2])\.(19[0-9]|20[0-9]{2})$/gm.test(this.date))
+          throw new Error(false);
+      return true;
+    } catch (er) {
+      return er.message;
+    }
+  }
+
+    isPhone() {
+    try {
+      if (!/^(\+375|80|375)(44|29|33|25)[0-9]{7,7}$/gm.test(this.phone))
         throw new Error(false);
       return true;
     } catch (er) {
@@ -83,6 +109,7 @@ const validator = new Validator();
 validator.str = "ekaterin.pro2@gmail.com";
 validator.url = "https://www.google.com/";
 validator.date = "15.03.2023";
+validator.phone = "+375291234567";
 
 const boolEmail = validator.isEmail();
 console.log(boolEmail);
@@ -92,3 +119,6 @@ console.log(boolURL);
 
 const boolDate = validator.isDate();
 console.log(boolDate);
+
+const boolPhone = validator.isPhone();
+console.log(boolPhone);
