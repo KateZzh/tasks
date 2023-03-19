@@ -9,6 +9,7 @@ function isValid(inp) {
   if (inp.value.trim() === "") throw new Error("empty");
   if (isNaN(inp.value)) throw new Error("not number");
 }
+
 btn.addEventListener("click", function () {
   try {
     const inp = document.querySelector("input");

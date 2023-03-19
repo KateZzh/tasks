@@ -21,16 +21,16 @@
 class ServerPost {
   controller(obj) {
     try {
-      const contr = this.service(obj);
-      return contr;
+      const serv = this.service(obj);
+      return serv;
     } catch (error) {
       return error.message;
     }
   }
 
   service(obj) {
-    const serv = this.repository(obj);
-    return serv;
+    const rep = this.repository(obj);
+    return rep;
   }
 
   repository(obj) {
