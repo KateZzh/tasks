@@ -17,8 +17,14 @@
 // имеется. В противном случае бросить исключение. Добавить проверки
 
 class ServerById {
+  middleware(data) {
+    if (!data.hasOwnProperty("id")) throw new Error("no id");
+    if (isNaN(data.id)) throw new Error("error");
+  }
+
   controller(data) {
     try {
+      this.middleware(data);
       const serv = this.service(data);
       return serv;
     } catch (error) {

@@ -17,8 +17,16 @@
 // Если совпадения по id нет – ошибка. Добавить проверки
 
 class ServerPut {
+  middleware(data) {
+    if (!data.hasOwnProperty("name") || !data.hasOwnProperty("age"))
+      throw new Error("incorrect Object");
+    if (isNaN(data.age)) throw new Error("Object age is string");
+    if (!isNaN(data.name)) throw new Error("Object name is number");
+  }
+
   controller(data) {
     try {
+      this.middleware(data);
       const serv = this.service(data);
       return serv;
     } catch (error) {
