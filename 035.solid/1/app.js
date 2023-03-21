@@ -17,22 +17,22 @@ class DomHtml {
   doPlus(inp1, inp2) {
     const plusOut1 = document.querySelector(".out1");
 
-    plusOut1.innerHTML = +inp1 + +inp2;
+    plusOut1.innerHTML = `Результат суммы: ${+inp1 + +inp2}`;
   }
   doMinus(inp1, inp2) {
     const minusOut2 = document.querySelector(".out2");
 
-    minusOut2.innerHTML = +inp1 - +inp2;
+    minusOut2.innerHTML = `Результат разности: ${+inp1 - +inp2}`;
   }
   doMultiply(inp1, inp2) {
     const multiplyOut3 = document.querySelector(".out3");
 
-    multiplyOut3.innerHTML = +inp1 * +inp2;
+    multiplyOut3.innerHTML = `Результат произведения: ${+inp1 * +inp2}`;
   }
   doDivide(inp1, inp2) {
     const divideOut4 = document.querySelector(".out4");
 
-    divideOut4.innerHTML = +inp1 / +inp2;
+    divideOut4.innerHTML = `Результат деления: ${+inp1 / +inp2}`;
   }
 }
 
