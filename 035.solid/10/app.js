@@ -5,14 +5,11 @@ class Conversion {
   doBinaryNumber(binaryNum) {
     try {
       const arrBinaryNum = binaryNum.split("");
-
-      if (!this.isValid(arrBinaryNum))
-        throw new Error(
-          "Число содержит символы, отсутствующие в выбранной системе счисления"
-        );
-
       let numDecimalNumber = 0;
       let count = 0;
+
+      if (!this.isValid(arrBinaryNum))
+        throw new Error("Число содержит символы, отсутствующие в выбранной системе счисления");
 
       for (let i = arrBinaryNum.length - 1; i >= 0; i--) {
         numDecimalNumber += arrBinaryNum[count] * 2 ** i;
