@@ -2,12 +2,11 @@
 // все числа 10 системы счисления в 8
 
 class Conversion {
-  doOctalNumber(num) {
+  doOctalNumber(num, rem) {
     try {
-      if (isNaN(num)) throw new Error("not a number");
-
       let arr = [];
-      let rem = [0, 1, 2, 3, 4, 5, 6, 7];
+
+      if (isNaN(num)) throw new Error("not a number");
 
       while (num >= rem.length) {
         let currentRem = num % rem.length;
@@ -25,6 +24,7 @@ class Conversion {
   }
 }
 
+const rem = [0, 1, 2, 3, 4, 5, 6, 7];
 const num = 375;
 const conversion = new Conversion();
-conversion.doOctalNumber(num);
+conversion.doOctalNumber(num, rem);

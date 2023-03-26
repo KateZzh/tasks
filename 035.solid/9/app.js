@@ -29,12 +29,11 @@
 // conversion.doDecimalNumber(num);
 
 class Conversion {
-  doDecimalNumber(num) {
+  doDecimalNumber(num, rem) {
     try {
-      if (isNaN(num)) throw new Error("not a number");
-
       let arr = [];
-      let rem = [0, 1];
+
+      if (isNaN(num)) throw new Error("not a number");
 
       while (num >= rem.length) {
         let currentRem = num % rem.length;
@@ -52,6 +51,7 @@ class Conversion {
   }
 }
 
+const rem = [0, 1];
 const num = 375;
 const conversion = new Conversion();
-conversion.doDecimalNumber(num);
+conversion.doDecimalNumber(num, rem);
