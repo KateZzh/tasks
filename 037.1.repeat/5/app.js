@@ -13,9 +13,9 @@ function main() {
 
   document.querySelector("button").addEventListener("click", () => {
     const inp = document.querySelector("input");
-    try {
-      const div = document.querySelector("div");
+    const div = document.querySelector("div");
 
+    try {
       isValid(inp);
 
       arr.push(+inp.value * 2);
@@ -33,4 +33,5 @@ function main() {
   });
 }
 
-const result = main();
+main();
+
