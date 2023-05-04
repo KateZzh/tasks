@@ -61,7 +61,7 @@ left.addEventListener("click", function () {
   nameOfSong.textContent = songs[currentIndexSong].nameOfSong;
   songCover.style = songs[currentIndexSong].imgPath;
   audio.play();
-  flaf = true;
+  flag = true;
   run.style = "background-image: url(./assets/group6.png)";
 });
 
