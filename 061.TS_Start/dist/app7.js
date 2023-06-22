@@ -1,9 +1,9 @@
 // Напишите программу, которая находит факториал заданного числа num и
 // выводит результат в консоль.
-var fact = 1;
-var youNum = +prompt();
-for (var i_1 = 1; i_1 <= youNum; i_1++) {
-    fact *= i_1;
+let fact = 1;
+let youNum = +prompt();
+for (let i = 1; i <= youNum; i++) {
+    fact *= i;
 }
 console.log(fact);
 function factorial(n) {

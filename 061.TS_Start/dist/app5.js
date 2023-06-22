@@ -1,8 +1,8 @@
 // Напишите программу, которая находит сумму всех чисел от 1 до 100 и выводит
 // результат в консоль.
-var count = 0;
-for (var i_1 = 1; i_1 <= 100; i_1++) {
-    count += i_1;
+let count = 0;
+for (let i = 1; i <= 100; i++) {
+    count += i;
 }
 console.log(count);
 function sum(n) {
