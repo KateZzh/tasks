@@ -17,6 +17,7 @@ for (let i = 0; i < newStr9.length; i++) {
       count9 = tempCount9;
       symbol = tempSymbol;
     }
+    
     tempSymbol = newStr9[i];
     tempCount9 = 1;
   } else {
