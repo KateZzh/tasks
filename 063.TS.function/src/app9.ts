@@ -20,5 +20,6 @@ function doObject(arr9: istyle[]) {
 
   return obj9;
 }
+
 const res9 = doObject(arr9);
 console.log(res9);
