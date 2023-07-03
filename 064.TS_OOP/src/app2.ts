@@ -3,7 +3,7 @@
 // помощью экземпляра класса. Создайте несколько экземпляров класса Student и
 // выведите их свойства.
 
-interface iStudent {
+interface iStudent2 {
   name: string;
   age: number;
 }
@@ -13,7 +13,7 @@ class Student2 {
   public age: number;
 }
 
-const student2: iStudent = new Student2();
+const student2 = new Student2();
 
 student2.name = "Jack";
 student2.age = 18;
