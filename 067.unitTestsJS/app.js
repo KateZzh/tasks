@@ -16,21 +16,39 @@ function doDegree(a, b) {
 // произведения 2 множителей. Добавить необходимые проверки.
 // Написать тест для функции
 
+// function multiply(array) {
+//   try {
+//     if (!Array.isArray(array)) throw new Error("this not array");
+
+//     if (array.length === 0) throw new Error("array is empty");
+
+//     const data = array.filter((el) => {
+//       if (typeof el != "number") return true;
+//     });
+
+//     if (data.length > 0) throw new Error("elements array not a number");
+
+//     const res = array.reduce((sum, el) => {
+//       return el * sum;
+//     }, 1);
+//     return res;
+//   } catch (error) {
+//     return error.message;
+//   }
+// }
+
 function multiply(array) {
   try {
     if (!Array.isArray(array)) throw new Error("this not array");
 
     if (array.length === 0) throw new Error("array is empty");
 
-    const data = array.filter((el) => {
-      if (typeof el != "number") return true;
+    const data = array.some((el) => {
+      if (typeof el != "number") throw new Error("elements array not a number");
     });
 
-    if (data.length > 0) throw new Error("elements array not a number");
+    const res = array.reduce((sum, el) => el * sum, 1);
 
-    const res = array.reduce((sum, el) => {
-      return el * sum;
-    }, 1);
     return res;
   } catch (error) {
     return error.message;
@@ -40,6 +58,24 @@ function multiply(array) {
 // 3. Написать функцию которая принимает массив чисел и находит сумму всех
 // элементов. Добавить необходимые проверки.
 // Написать тест для функции
+
+function doSum(array) {
+  try {
+    if (!Array.isArray(array)) throw new Error("this not array");
+
+    if (array.length === 0) throw new Error("array is empty");
+
+    const data = array.some((el) => {
+      if (typeof el != "number") throw new Error("elements array not a number");
+    });
+
+    const res = array.reduce((sum, el) => el + sum, 0);
+
+    return res;
+  } catch (error) {
+    return error.message;
+  }
+}
 
 // 4. У вас есть массив объектов вида приведенного в приложении. Необходимо
 // вывести все товары, количество которых больше 10 и произведены в Германии
@@ -84,4 +120,4 @@ function doUnique(arr) {
   }
 }
 
-module.exports = { doDegree, multiply, findProduct, doUnique };
+module.exports = { doDegree, multiply, doSum, findProduct, doUnique };

@@ -1,4 +1,4 @@
-const { doDegree, multiply, findProduct, doUnique } = require("./app");
+const { doDegree, multiply, doSum, findProduct, doUnique } = require("./app");
 
 describe("doDegree:", () => {
   test("", () => {
@@ -40,6 +40,28 @@ describe("multiply", () => {
 
   test("", () => {
     const result = multiply("");
+    expect(result).toBe("this not array");
+  });
+});
+
+describe("doSum", () => {
+  test("", () => {
+    const result = doSum([3, 3, 3]);
+    expect(result).toBe(9);
+  });
+
+  test("", () => {
+    const result = doSum([]);
+    expect(result).toBe("array is empty");
+  });
+
+  test("", () => {
+    const result = doSum([3, "3", 3]);
+    expect(result).toBe("elements array not a number");
+  });
+
+  test("", () => {
+    const result = doSum("");
     expect(result).toBe("this not array");
   });
 });
