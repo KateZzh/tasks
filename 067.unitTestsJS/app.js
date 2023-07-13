@@ -120,4 +120,30 @@ function doUnique(arr) {
   }
 }
 
-module.exports = { doDegree, multiply, doSum, findProduct, doUnique };
+// 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
+// Написать тест для функции
+
+function doubleValues(obj) {
+  try {
+    if (Object.values(obj).length === 0) throw new Error("empty");
+
+    for (let key in obj) {
+      if (typeof obj[key] !== "number") throw new Error("not a number");
+
+      obj[key] = obj[key] * 2;
+    }
+
+    return obj;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+module.exports = {
+  doDegree,
+  multiply,
+  doSum,
+  findProduct,
+  doUnique,
+  doubleValues,
+};

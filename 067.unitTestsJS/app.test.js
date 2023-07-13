@@ -1,4 +1,4 @@
-const { doDegree, multiply, doSum, findProduct, doUnique } = require("./app");
+const { doDegree, multiply, doSum, findProduct, doUnique, doubleValues } = require("./app");
 
 describe("doDegree:", () => {
   test("", () => {
@@ -125,4 +125,27 @@ describe("doUnique:", () => {
     const result = doUnique(array);
     expect(result).toBe("incorrect number");
   });
+})
+
+describe("doubleValues:", () => {
+  test("", () => {
+    const obj = {box1: 1, box2: 2, box3: 3};
+
+    const result = doubleValues(obj);
+    expect(result).toEqual({box1: 2, box2: 4, box3: 6})
+  })
+
+  test("", () => {
+    const obj = {};
+
+    const result = doubleValues(obj);
+    expect(result).toBe("empty");
+  })
+
+  test("", () => {
+    const obj = {box1: 1, box2: "aaa", box3: 3};
+
+    const result = doubleValues(obj);
+    expect(result).toBe("not a number");
+  })
 });
