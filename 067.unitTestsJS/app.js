@@ -120,6 +120,23 @@ function doUnique(arr) {
   }
 }
 
+// 6. На входе статичный объект. Необходимо посчитать количество пар (ключ:
+//   значение) где значение число и вывести количество. Добавить необходимые
+//   проверки.
+//   Написать тест для функции
+
+function doCount(obj) {
+  try {
+    if (Object.values(obj).length === 0) throw new Error("empty");
+
+    const count = Object.values(obj).length;
+
+    return count;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 // Написать тест для функции
 
@@ -145,5 +162,6 @@ module.exports = {
   doSum,
   findProduct,
   doUnique,
+  doCount,
   doubleValues,
 };

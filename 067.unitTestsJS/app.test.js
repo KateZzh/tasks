@@ -1,4 +1,4 @@
-const { doDegree, multiply, doSum, findProduct, doUnique, doubleValues } = require("./app");
+const { doDegree, multiply, doSum, findProduct, doUnique, doCount, doubleValues } = require("./app");
 
 describe("doDegree:", () => {
   test("", () => {
@@ -103,13 +103,6 @@ describe("findProduct:", () => {
     const result = findProduct(newArr);
     expect(result).toBe("count isn't a number");
   });
-
-  // test("", () => {
-  //   const newArr = array;
-  //   newArr[0].producer = 10;
-  //   const result = findProduct(newArr);
-  //   expect(result).toBe("producer isn't a string");
-  // })
 });
 
 describe("doUnique:", () => {
@@ -125,6 +118,22 @@ describe("doUnique:", () => {
     const result = doUnique(array);
     expect(result).toBe("incorrect number");
   });
+})
+
+describe("doCount:", () => {
+  test("", () => {
+    const obj = {box1: 1, box2: 2, box3: 3};
+
+    const result = doCount(obj)
+    expect(result).toBe(3);
+  })
+
+  test("", () => {
+    const obj = {};
+
+    const result = doCount(obj);
+    expect(result).toBe("empty");
+  })
 })
 
 describe("doubleValues:", () => {
