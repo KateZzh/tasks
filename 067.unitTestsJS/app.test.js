@@ -235,6 +235,27 @@ describe("convertArr:", () => {
   })
 
   test("", () => {
+    const str = 'ABBCcAD';
+
+    const result = convertArr(str);
+    expect(result).toEqual(['A', 'B', 'C', 'c', 'A', 'D']);
+  })
+
+  test("", () => {
+    const str = '12233';
+
+    const result = convertArr(str);
+    expect(result).toEqual([1, 2, 3]);
+  })
+
+  test("", () => {
+    const str = '12233AA2';
+
+    const result = convertArr(str);
+    expect(result).toEqual([1, 2, 3, "A", 2]);
+  })
+
+  test("", () => {
     const str = "";
 
     const result = convertArr(str);
