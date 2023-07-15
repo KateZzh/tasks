@@ -191,6 +191,28 @@ function doArrEvenVal(obj) {
 // 6 -> [[1, 2, 3, 4, 5, 6]]
 // Написать тест для функции
 
+function makeArraySplit(arr, n) {
+  try {
+    let newArr = [];
+    let temp = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      temp.push(arr[i]);
+
+      if (temp.length === n) {
+        newArr.push(temp);
+        temp = [];
+      }
+    }
+
+    if (temp.length > 0) newArr.push(temp);
+
+    return newArr;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
@@ -209,8 +231,7 @@ function convertArr(str) {
     let newArr = [];
 
     for (let i = 0; i < arr.length; i++) {
-      if (newArr[newArr.length - 1] != arr[i] && !isNaN(arr[i]))
-        newArr.push(+arr[i]);
+      if (newArr[newArr.length - 1] != arr[i] && !isNaN(arr[i])) newArr.push(+arr[i]);
       if (newArr[newArr.length - 1] != arr[i]) newArr.push(arr[i]);
     }
 
@@ -229,5 +250,6 @@ module.exports = {
   doCount,
   doubleValues,
   doArrEvenVal,
+  makeArraySplit,
   convertArr,
 };

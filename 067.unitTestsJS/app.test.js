@@ -7,7 +7,8 @@ const {
   doCount,
   doubleValues,
   doArrEvenVal,
-  convertArr
+  makeArraySplit,
+  convertArr,
 } = require("./app");
 
 describe("doDegree:", () => {
@@ -84,38 +85,21 @@ describe("findProduct:", () => {
     { id: 4, title: "Ноутбук", count: 13, price: 3000, producer: "Китай" },
     { id: 5, title: "Планшет", count: 22, price: 2100, producer: "Китай" },
     { id: 6, title: "Телевизор", count: 4, price: 4100, producer: "Германия" },
-    {
-      id: 7,
-      title: "Холодильник",
-      count: 11,
-      price: 2400,
-      producer: "Германия",
-    },
+    { id: 7, title: "Холодильник", count: 11, price: 2400, producer: "Германия" },
   ];
 
   test("", () => {
     const result = findProduct(array);
     expect(result).toEqual([
-      {
-        id: 2,
-        title: "Смартфон",
-        count: 33,
-        price: 1500,
-        producer: "Германия",
-      },
-      {
-        id: 7,
-        title: "Холодильник",
-        count: 11,
-        price: 2400,
-        producer: "Германия",
-      },
+      { id: 2, title: "Смартфон", count: 33, price: 1500, producer: "Германия" },
+      { id: 7, title: "Холодильник", count: 11, price: 2400, producer: "Германия" }
     ]);
   });
 
   test("", () => {
     const newArr = array;
     newArr[0].count = "";
+
     const result = findProduct(newArr);
     expect(result).toBe("count isn't a number");
   });
@@ -135,24 +119,16 @@ describe("findProduct:", () => {
 
 describe("doUnique:", () => {
   test("", () => {
-    const array = [
-      "+375291111111",
-      "+375291111111",
-      "+375291111112",
-      "+375291111111",
-    ];
+    const array = ["+375291111111", "+375291111111", "+375291111112", "+375291111111"];
+
     const result = doUnique(array);
     expect(result).toEqual(["+375291111111", "+375291111112"]);
     expect(result).toHaveLength(2);
   });
 
   test("", () => {
-    const array = [
-      "+375291",
-      "+375291111111",
-      "+375291111112",
-      "+375291111111",
-    ];
+    const array = ["+375291", "+375291111111", "+375291111112", "+375291111111"];
+
     const result = doUnique(array);
     expect(result).toBe("incorrect number");
   });
@@ -214,6 +190,7 @@ describe("doArrEvenVal:", () => {
 
   test("", () => {
     const obj = { num1: 1, num2: 2, num3: "a", num4: 4 };
+
     const result = doArrEvenVal(obj);
     expect(result).toBe("element isn't a number");
   });
@@ -226,46 +203,68 @@ describe("doArrEvenVal:", () => {
   });
 });
 
+describe("makeArraySplit:", () => {
+  test("", () => {
+    const result1 = makeArraySplit([1, 2, 3, 4, 5, 6], 1);
+    expect(result1).toEqual([[1], [2], [3], [4], [5], [6]]);
+
+    const result2 = makeArraySplit([1, 2, 3, 4, 5, 6], 2);
+    expect(result2).toEqual([[1, 2], [3, 4], [5, 6]]);
+
+    const result3 = makeArraySplit([1, 2, 3, 4, 5, 6], 3);
+    expect(result3).toEqual([[1, 2, 3], [4, 5, 6]]);
+
+    const result4 = makeArraySplit([1, 2, 3, 4, 5, 6], 4);
+    expect(result4).toEqual([[1, 2, 3, 4], [5, 6]]);
+
+    const result5 = makeArraySplit([1, 2, 3, 4, 5, 6], 5);
+    expect(result5).toEqual([[1, 2, 3, 4, 5], [6]]);
+
+    const result6 = makeArraySplit([1, 2, 3, 4, 5, 6], 6);
+    expect(result6).toEqual([[1, 2, 3, 4, 5, 6]]);
+  });
+});
+
 describe("convertArr:", () => {
   test("", () => {
-    const str = 'AAAABBBCCDAABBB';
+    const str = "AAAABBBCCDAABBB";
 
     const result = convertArr(str);
-    expect(result).toEqual(['A', 'B', 'C', 'D', 'A', 'B']);
-  })
+    expect(result).toEqual(["A", "B", "C", "D", "A", "B"]);
+  });
 
   test("", () => {
-    const str = 'ABBCcAD';
+    const str = "ABBCcAD";
 
     const result = convertArr(str);
-    expect(result).toEqual(['A', 'B', 'C', 'c', 'A', 'D']);
-  })
+    expect(result).toEqual(["A", "B", "C", "c", "A", "D"]);
+  });
 
   test("", () => {
-    const str = '12233';
+    const str = "12233";
 
     const result = convertArr(str);
     expect(result).toEqual([1, 2, 3]);
-  })
+  });
 
   test("", () => {
-    const str = '12233AA2';
+    const str = "12233AA2";
 
     const result = convertArr(str);
     expect(result).toEqual([1, 2, 3, "A", 2]);
-  })
+  });
 
   test("", () => {
     const str = "";
 
     const result = convertArr(str);
     expect(result).toBe("empty");
-  })
+  });
 
   test("", () => {
     const str = 12;
 
     const result = convertArr(str);
     expect(result).toBe("not a string");
-  })
-})
+  });
+});
