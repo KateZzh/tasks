@@ -156,6 +156,57 @@ function doubleValues(obj) {
   }
 }
 
+// 8. На входе статичный объект. Необходимо сформировать массив из всх четных
+// значений объекта.
+// Написать тест для функции
+
+function doArrEvenVal(obj) {
+  try {
+    const arr = Object.values(obj);
+    let newArr = [];
+
+    if (!arr.length) throw new Error("empty");
+
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] != "number") throw new Error("element isn't a number");
+      if (arr[i] % 2 == 0) newArr.push(arr[i]);
+    }
+
+    if (!newArr.length) throw new Error("array contains no even numbers");
+
+    return newArr;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+// 10. Реализуйте функцию, которая принимает в качестве параметра строку и
+// возвращает массив без каких-либо элементов с одинаковым значением рядом
+// друг с другом.
+// Написать тест для функции
+// 'AAAABBBCCDAABBB -> ['A', 'B', 'C', 'D', 'A', 'B’]
+// 'ABBCcAD’ -> ['A', 'B', 'C', 'c', 'A', 'D’]
+// '12233’ -> [1, 2, 3]
+// Написать тест для функции
+
+function convertArr(str) {
+  try {
+    if (!str) throw new Error("empty");
+    if (typeof str !== "string") throw new Error("not a string");
+
+    const arr = str.split("");
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (newArr[newArr.length - 1] != arr[i]) newArr.push(arr[i]);
+    }
+
+    return newArr;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 module.exports = {
   doDegree,
   multiply,
@@ -164,4 +215,6 @@ module.exports = {
   doUnique,
   doCount,
   doubleValues,
+  doArrEvenVal,
+  convertArr,
 };
