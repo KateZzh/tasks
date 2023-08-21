@@ -231,7 +231,8 @@ function convertArr(str) {
     let newArr = [];
 
     for (let i = 0; i < arr.length; i++) {
-      if (newArr[newArr.length - 1] != arr[i] && !isNaN(arr[i])) newArr.push(+arr[i]);
+      if (newArr[newArr.length - 1] != arr[i] && !isNaN(arr[i]))
+        newArr.push(+arr[i]);
       if (newArr[newArr.length - 1] != arr[i]) newArr.push(arr[i]);
     }
 
