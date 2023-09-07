@@ -1,5 +1,10 @@
 import "./App.css";
-import Task21 from "./pages/Task21";
+import Task26 from "./pages/Task26";
+// import Task25 from "./pages/Task25";
+// import Task24 from "./pages/Task24";
+// import Task23 from "./pages/Task23";
+// import Task22 from "./pages/Task22";
+// import Task21 from "./pages/Task21";
 // import Task20 from "./pages/Task20";
 // import Task19 from "./pages/Task19";
 // import Task18 from "./pages/Task18";
@@ -52,7 +57,12 @@ function App() {
       {/* <Task18 /> */}
       {/* <Task19 /> */}
       {/* <Task20 /> */}
-      <Task21 />
+      {/* <Task21 /> */}
+      {/* <Task22 /> */}
+      {/* <Task23 /> */}
+      {/* <Task24 /> */}
+      {/* <Task25 /> */}
+      <Task26 />
     </div>
   );
 }
