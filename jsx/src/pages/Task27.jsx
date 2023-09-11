@@ -10,6 +10,7 @@ const Task27 = () => {
   const [bool, setBool] = useState("");
 
   const checkVal = () => {
+    // eslint-disable-next-line no-useless-escape
     setBool(!/^[\w\.\-]+@[a-z]{2,10}\.[a-z]{2,5}/gm.test(val) ? "false" : "true");
   };
 
