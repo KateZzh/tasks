@@ -2,6 +2,7 @@
 // “бургер” отображать блок навигации из 4 параграфов.
 
 import { useState } from "react";
+import style from "./assets/style.module.css";
 
 const Task29 = () => {
   const [flag, setFlag] = useState(false);
@@ -10,7 +11,9 @@ const Task29 = () => {
 
   return (
     <div>
-      <button onClick={() => setFlag(flag ? false : true)}>{flag ? "close" : "open"}</button>
+      {/* <button onClick={() => setFlag(flag ? false : true)}>{flag ? "close" : "open"}</button> */}
+
+      <div onClick={() => setFlag(flag ? false : true)} className={style.burger}></div>
 
       {flag ? arr.map((el, index) => <p key={index}>{el}</p>) : null}
     </div>

@@ -5,3 +5,11 @@
 .text2 {
   color: brown;
 }
+
+.burger {
+  background-image: url(./Burger_Menu.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
