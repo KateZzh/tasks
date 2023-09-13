@@ -7,7 +7,7 @@
 import { useState, useEffect } from "react";
 
 const Task31 = () => {
-  const [val, setVal] = useState();
+  const [val, setVal] = useState("");
 
   useEffect(() => {
     console.log(val);

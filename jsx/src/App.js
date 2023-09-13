@@ -1,5 +1,7 @@
 import "./App.css";
-import Task31 from "./pages/Task31";
+// import Task33 from "./pages/Task33";
+import Task32 from "./pages/Task32";
+// import Task31 from "./pages/Task31";
 // import Task30 from "./pages/Task30";
 // import Task29 from "./pages/Task29";
 // import Task28 from "./pages/Task28";
@@ -72,7 +74,9 @@ function App() {
       {/* <Task28 /> */}
       {/* <Task29 /> */}
       {/* <Task30 /> */}
-      <Task31 />
+      {/* <Task31 /> */}
+      <Task32 />
+      {/* <Task33 /> */}
     </div>
   );
 }
