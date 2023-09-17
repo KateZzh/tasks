@@ -1,5 +1,5 @@
 import "./App.css";
-import Task41 from "./pages/Task41";
+import Task41 from "./pages/hooks_tasks/Task41";
 import myContext from "./context/context";
 import { useState } from "react";
 
