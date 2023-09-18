@@ -25,7 +25,7 @@
 // компонентах.
 
 import { useContext } from "react";
-import myContext from "../../context/context";
+import myContext from "../../../context/context";
 
 const Task42 = () => {
   const { val, getLang } = useContext(myContext);

@@ -22,6 +22,7 @@ const Task37 = () => {
     setRes(fact);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useMemo(showFact, [val]);
 
   return (

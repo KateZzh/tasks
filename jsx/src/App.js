@@ -1,29 +1,33 @@
 import "./App.css";
-import Task41 from "./pages/hooks_tasks/Task41";
-import myContext from "./context/context";
-import { useState } from "react";
+// import Task1 from "./pages/hooks_tasks/useContext/Task1";
+// import Task3 from "./pages/hooks_tasks/useRef/Task3"
+import Task4 from "./pages/hooks_tasks/useEffect/Task4"
+// import myContext from "./context/context";
+// import { useState } from "react";
 
 function App() {
-  const [val, setVal] = useState("ru");
+  // const [val, setVal] = useState("ru");
 
-  const obj = {
-    id: "1",
-    name: "AAA",
-    email: "AAA@gmail.com",
-    pwd: "asd",
-    val,
-    getLang,
-  };
+  // const obj = {
+  //   id: "1",
+  //   name: "AAA",
+  //   email: "AAA@gmail.com",
+  //   pwd: "asd",
+  //   val,
+  //   getLang,
+  // };
 
-  function getLang(e) {
-    setVal(e.target.textContent);
-  }
+  // function getLang(e) {
+  //   setVal(e.target.textContent);
+  // }
 
   return (
     <>
-      <myContext.Provider value={obj}>
-        <Task41 />
-      </myContext.Provider>
+      {/* <myContext.Provider value={obj}>
+        <Task1 />
+      </myContext.Provider> */}
+
+      <Task4 />
     </>
   );
 }
