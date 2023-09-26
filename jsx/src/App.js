@@ -1,7 +1,7 @@
 import "./App.css";
+import Task5 from "./pages/hooks_tasks/useRef/Task5";
 // import Task1 from "./pages/hooks_tasks/useContext/Task1";
-// import Task3 from "./pages/hooks_tasks/useRef/Task3"
-import Task4 from "./pages/hooks_tasks/useEffect/Task4"
+// import Task4 from "./pages/hooks_tasks/useEffect/Task4"
 // import myContext from "./context/context";
 // import { useState } from "react";
 
@@ -27,7 +27,7 @@ function App() {
         <Task1 />
       </myContext.Provider> */}
 
-      <Task4 />
+      <Task5 />
     </>
   );
 }
