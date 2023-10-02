@@ -1,9 +1,9 @@
-import Task3 from "./page/Task3";
+import Task7 from "./page/Task7";
 
 function App() {
   return (
     <>
-      <Task3 />
+      <Task7 />
     </>
   );
 }
