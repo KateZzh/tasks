@@ -1,5 +1,5 @@
 import "./App.css";
-import Task3 from "./pages/hooks_tasks/useCallback/Task3";
+import Task5 from "./pages/hooks_tasks/useCallback/Task5";
 // import Task5 from "./pages/hooks_tasks/useRef/Task5";
 // import Task1 from "./pages/hooks_tasks/useContext/Task1";
 // import Task4 from "./pages/hooks_tasks/useEffect/Task4"
@@ -28,7 +28,7 @@ function App() {
         <Task1 />
       </myContext.Provider> */}
 
-      <Task3 />
+      <Task5 />
     </>
   );
 }
