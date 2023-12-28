@@ -192,6 +192,73 @@ async function tasks() {
   // const data = await table.find({ email: { $regex: /^[a-zA-Z0-9\.\-\_]+@[a-z]+\.com$/gm } });
   // console.log(data);
 
+  // 21. Отобразите количество студентов коллекции "students"
+  // const data = await table.find().countDocuments();
+  // console.log(data);
 
+  // 22. Вывести список студентов, чьи возрасты меньше 25 лет в отсортированном
+  // порядке.
+  // const data = await table.find({ age: { $lt: 25 } }).sort({ age: 1 });
+  // console.log(data);
+
+  // 23. Отобразите 5 студентов старше 20 лет.
+  // const data = await table.find({ age: { $gt: 20 } }).limit(5);
+  // console.log(data);
+
+  // 24.Отобразите студентов в диапазоне от 20 лет до 30 в отсортированном порядке.
+  // const data = await table
+  //   .find({ $and: [{ age: { $gt: 20 } }, { age: { $lt: 30 } }] })
+  //   .sort({ age: 1 });
+  // console.log(data);
+
+  // 25. Отобразите количество студентов коллекции "students" где возраст от 20
+  // const data = await table.find({ age: { $gte: 20 } }).countDocuments();
+  // console.log(data);
+
+  // 26. Найти самого молодого студента.
+  // const data = await table.find().sort({ age: 1 }).limit(1);
+  // console.log(data);
+
+  // 27. Вывести количество студентов, чьи имена начинаются на букву “А”.
+  // const data = await table.find({ name: { $regex: /^А[А-Яа-я ]+$/gm }});
+  // console.log(data);
+
+  // 28.Найти количество студентов старше 25 лет.
+  // const data = await table.find({ age: { $gte: 25 } }).countDocuments();
+  // console.log(data);
+
+  // 29. Вывести количество студентов, чьи электронные адреса содержат слово
+  // "example".
+  // const data = await table
+  //   .find({ email: { $regex: /^[a-z0-9\.\-\_]+\@example\.[a-z]+$/gm } })
+  //   .countDocuments();
+  // console.log(data);
+
+  // 30.Найти самого старого студента.
+  // const data = await table.find().sort({ age: -1 }).limit(1);
+  // console.log(data);
+
+  // 31. Найти количество студентов моложе 22 лет.
+  // const data = await table.find({ age: { $lt: 22 } }).countDocuments();
+  // console.log(data);
+
+  // 32. Отобразите 3 студента старше 20 в отсортированном порядке.
+  // const data = await table
+  //   .find({ age: { $gt: 20 } })
+  //   .sort({ age: 1 })
+  //   .limit(3);
+  // console.log(data);
+
+  // 33. Отобразите уникальные name в отсортированном порядке.
+  // const data = await table.find().distinct('name').sort({ name: 1 });
+  // console.log(data);
+
+  // 34.Удалить номер телефона у студентов, чье имя начинается на букву "А".
+  // await table.updateMany({ name: { $regex: /^А[А-Яа-я ]+$/gm } }, { $set: { phone: '' } });
+  // const data = await table.find();
+  // console.log(data);
+
+  // 35. Удалить коллекцию
+  // await table.collection.drop();
 }
 tasks();
