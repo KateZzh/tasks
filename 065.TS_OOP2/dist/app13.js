@@ -26,10 +26,12 @@ class ServerPost {
         const arrDB = [
             { id: 1, email: "Test1", pws: "test" },
             { id: 2, email: "Test2", pws: "test" },
-            { id: 3, email: "Test.t@gmail.com", pws: "test" }
+            { id: 3, email: "Test.t@gmail.com", pws: "test" },
         ];
         const filtered = arrDB.filter((el) => el.email !== data.email);
-        filtered.length === arrDB.length ? arrDB.push({ id: arrDB.length + 1, ...data }) : console.log("email already exists");
+        filtered.length === arrDB.length
+            ? arrDB.push({ id: arrDB.length + 1, ...data })
+            : console.log("email already exists");
         return arrDB;
     }
 }
@@ -37,37 +39,3 @@ const data = JSON.parse(`{ "email": "Test.t@gmail.com", "pws": "test" }`);
 const serverPost = new ServerPost();
 const res = serverPost.controller(data);
 console.log(res);
-// interface iData {
-//   id: number;
-//   email: string;
-//   pws: string;
-// }
-// interface iServerPost {
-//   middleware(data: iData): iData[];
-//   controller(data: iData): iData[];
-//   service(data: iData): iData[];
-//   repository(data: iData): iData[];
-// }
-// class ServerPost implements iServerPost {
-//   middleware(data: iData): iData[] {
-//     return this.controller(data);
-//   }
-//   controller(data: iData): iData[] {
-//     return this.service(data);
-//   }
-//   service(data: iData): iData[] {
-//     return this.repository(data);
-//   }
-//   repository(data: iData): iData[] {
-//     const arr: iData[] = [
-//       { id: 1, email: "Test1", pws: "test" },
-//       { id: 2, email: "Test2", pws: "test" },
-//     ];
-//     const filtered: iData[] = arr.filter((el: iData) => el.email !== data.email);
-//     // if (bool) arr.push({ id: arr.length + 1, ...data });
-//     return filtered;
-//   }
-// }
-// const data: iData = JSON.parse(`{ "email": "Test", "pws": "test" }`);
-// const serverPost = new ServerPost();
-// serverPost.middleware(data);
